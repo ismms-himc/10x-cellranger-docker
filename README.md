@@ -33,11 +33,15 @@ cellranger v2.1.0
   `$ awk 'BEGIN{FS="\t"; OFS="\t"} $3 == "transcript"{ $3="exon"; print}' refdata-cellranger-GRCh38-1.2.0/genes/genes.gtf > GRCh38-1.2.0.premrna.gtf`
 
 
-  ### trying to use new reference
+  ### trying to make new reference
   `$ cellranger mkref --genome=GRCh38-1.2.0_premrna --fasta=refdata-cellranger-GRCh38-1.2.0/fasta/genome.fa --genes=GRCh38-1.2.0.premrna.gtf`
+
+  See attempt_to_make_premrna_ref.txt for error.
 
   ### Using original reference
   `$ cellranger count --id=test_sample --fastqs=/tiny-bcl-output/outs/fastq_path/p1/s1 --sample=test_sample --chemistry=SC3Pv2 --expect-cells=100 --transcriptome=/refdata-cellranger-GRCh38-1.2.0`
+
+  See count_new_chem_output.txt for new error
 
   ### After making premrna
 

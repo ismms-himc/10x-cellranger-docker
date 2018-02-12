@@ -1,0 +1,102 @@
+[root@18f3884dc6d0 /]# cellranger count --id=test_sample --fastqs=/tiny-bcl-output/outs/fastq_path/p1/s1 --sample=test_sample --chemistry=SC3Pv2 --expect-cells=100 --transcriptome=/refdata-cellranger-GRCh38-1.2.0
+/opt/cellranger-2.1.0/cellranger-cs/2.1.0/bin
+cellranger count (2.1.0)
+Copyright (c) 2017 10x Genomics, Inc.  All rights reserved.
+-------------------------------------------------------------------------------
+
+Martian Runtime - '2.1.0-2.3.0'
+Serving UI at http://18f3884dc6d0:33595?auth=mSPfEzIMyZNQVip3fb8eI-jNUkWZCNCQ-r9DYY6j538
+
+Running preflight checks (please wait)...
+Checking sample info...
+Checking FASTQ folder...
+Checking reference...
+Checking reference_path (/refdata-cellranger-GRCh38-1.2.0) on 18f3884dc6d0...
+Checking chemistry...
+Checking optional arguments...
+mrc: '2.1.0-2.3.0'
+
+mrp: '2.1.0-2.3.0'
+
+Anaconda: Python 2.7.13 :: Continuum Analytics, Inc.
+
+numpy: 1.13.1
+
+scipy: 0.19.1
+
+pysam: 0.9.1
+
+h5py: 2.7.0
+
+pandas: 0.20.2
+
+STAR: STAR_2.5.1b
+
+samtools: samtools 1.6
+Using htslib 1.6
+Copyright (C) 2017 Genome Research Ltd.
+
+2018-02-12 20:36:32 [runtime] (ready)           ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.CHEMISTRY_DETECTOR.DETECT_CHEMISTRY
+2018-02-12 20:36:32 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.CHEMISTRY_DETECTOR.DETECT_CHEMISTRY.fork0.split
+2018-02-12 20:36:35 [runtime] (split_complete)  ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.CHEMISTRY_DETECTOR.DETECT_CHEMISTRY
+2018-02-12 20:36:35 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.CHEMISTRY_DETECTOR.DETECT_CHEMISTRY.fork0.chnk0.main
+2018-02-12 20:36:38 [runtime] (chunks_complete) ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.CHEMISTRY_DETECTOR.DETECT_CHEMISTRY
+2018-02-12 20:36:38 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.CHEMISTRY_DETECTOR.DETECT_CHEMISTRY.fork0.join
+2018-02-12 20:36:41 [runtime] (join_complete)   ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.CHEMISTRY_DETECTOR.DETECT_CHEMISTRY
+2018-02-12 20:36:47 [runtime] (ready)           ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.SETUP_CHUNKS
+2018-02-12 20:36:50 [runtime] (split_complete)  ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.SETUP_CHUNKS
+2018-02-12 20:36:50 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.SETUP_CHUNKS.fork0.chnk0.main
+2018-02-12 20:36:53 [runtime] (chunks_complete) ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.SETUP_CHUNKS
+2018-02-12 20:36:56 [runtime] (join_complete)   ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER.SETUP_CHUNKS
+2018-02-12 20:36:59 [runtime] (ready)           ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.CHUNK_READS
+2018-02-12 20:36:59 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.CHUNK_READS.fork0.split
+2018-02-12 20:37:02 [runtime] (split_complete)  ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.CHUNK_READS
+2018-02-12 20:37:02 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.CHUNK_READS.fork0.chnk0.main
+2018-02-12 20:37:05 [runtime] (chunks_complete) ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.CHUNK_READS
+2018-02-12 20:37:05 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.CHUNK_READS.fork0.join
+2018-02-12 20:37:08 [runtime] (join_complete)   ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.CHUNK_READS
+2018-02-12 20:37:11 [runtime] (ready)           ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.EXTRACT_READS
+2018-02-12 20:37:11 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.EXTRACT_READS.fork0.split
+2018-02-12 20:37:14 [runtime] (split_complete)  ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.EXTRACT_READS
+2018-02-12 20:37:14 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.EXTRACT_READS.fork0.chnk0.main
+2018-02-12 20:37:20 [runtime] (chunks_complete) ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.EXTRACT_READS
+2018-02-12 20:37:20 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.EXTRACT_READS.fork0.join
+2018-02-12 20:37:26 [runtime] (join_complete)   ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.EXTRACT_READS
+2018-02-12 20:37:29 [runtime] (ready)           ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.SUMMARIZE_READ_REPORTS
+2018-02-12 20:37:29 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.SUMMARIZE_READ_REPORTS.fork0.split
+2018-02-12 20:37:32 [runtime] (split_complete)  ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.SUMMARIZE_READ_REPORTS
+2018-02-12 20:37:32 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.SUMMARIZE_READ_REPORTS.fork0.join
+2018-02-12 20:37:35 [runtime] (join_complete)   ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.SUMMARIZE_READ_REPORTS
+2018-02-12 20:37:38 [runtime] (ready)           ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.ALIGN_READS
+2018-02-12 20:37:38 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.ALIGN_READS.fork0.split
+2018-02-12 20:37:41 [runtime] (split_complete)  ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.ALIGN_READS
+2018-02-12 20:37:41 [runtime] (run:local)       ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.ALIGN_READS.fork0.chnk0.main
+2018-02-12 20:38:07 [runtime] (failed)          ID.test_sample.SC_RNA_COUNTER_CS.SC_RNA_COUNTER._BASIC_SC_RNA_COUNTER.ALIGN_READS
+
+[error] Pipestance failed. Error log at:
+test_sample/SC_RNA_COUNTER_CS/SC_RNA_COUNTER/_BASIC_SC_RNA_COUNTER/ALIGN_READS/fork0/chnk0-u028681fb15/_errors
+
+Log message:
+Traceback (most recent call last):
+  File "/opt/cellranger-2.1.0/martian-cs/2.3.0/adapters/python/martian_shell.py", line 529, in _main
+    stage.main()
+  File "/opt/cellranger-2.1.0/martian-cs/2.3.0/adapters/python/martian_shell.py", line 495, in main
+    self._run(lambda: self._module.main(args, outs))
+  File "/opt/cellranger-2.1.0/martian-cs/2.3.0/adapters/python/martian_shell.py", line 464, in _run
+    cmd()
+  File "/opt/cellranger-2.1.0/martian-cs/2.3.0/adapters/python/martian_shell.py", line 495, in <lambda>
+    self._run(lambda: self._module.main(args, outs))
+  File "/opt/cellranger-2.1.0/cellranger-cs/2.1.0/mro/stages/counter/align_reads/__init__.py", line 52, in main
+    read_group_tags=tk_bam.make_star_rg_header(args.read_group))
+  File "/opt/cellranger-2.1.0/cellranger-cs/2.1.0/lib/python/cellranger/reference.py", line 579, in align
+    raise cr_utils.CRCalledProcessError(e.msg + ' Check STAR logs for errors: %s .' % star_log)
+CRCalledProcessError: Process returned error code -9: STAR . Check STAR logs for errors: /test_sample/SC_RNA_COUNTER_CS/SC_RNA_COUNTER/_BASIC_SC_RNA_COUNTER/ALIGN_READS/fork0/chnk0-u028681fb15/files/Log.out .
+
+
+Waiting 6 seconds for UI to do final refresh.
+Pipestance failed. Use --noexit option to keep UI running after failure.
+
+Saving pipestance info to test_sample/test_sample.mri.tgz
+For assistance, upload this file to 10x Genomics by running:
+
+cellranger upload <your_email> test_sample/test_sample.mri.tgz
