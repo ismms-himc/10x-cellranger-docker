@@ -28,6 +28,23 @@ cellranger v2.1.0
 
   See count_output.txt for output.
 
+
+  # make premrna
+  `$ awk 'BEGIN{FS="\t"; OFS="\t"} $3 == "transcript"{ $3="exon"; print}' refdata-cellranger-GRCh38-1.2.0/genes/genes.gtf > GRCh38-1.2.0.premrna.gtf`
+
+
+  ### trying to use new reference
+  `$ cellranger mkref --genome=GRCh38-1.2.0_premrna --fasta=refdata-cellranger-GRCh38-1.2.0/fasta/genome.fa --genes=GRCh38-1.2.0.premrna.gtf`
+
+  ### Using original reference
+  `$ cellranger count --id=test_sample --fastqs=/tiny-bcl-output/outs/fastq_path/p1/s1 --sample=test_sample --chemistry=SC3Pv2 --expect-cells=100 --transcriptome=/refdata-cellranger-GRCh38-1.2.0`
+
+  ### After making premrna
+
+/refdata-cellranger-GRCh38-1.2.0
+
+  `$ cellranger count --id=tiny_test_2_1 --fastqs=fastqs --transcriptome=GRCh38_premrna-1.0.0/ --sample=test_sample --expect-cells=100 --chemistry=SC3Pv2`
+
 # Output from cellranger commands
 
 See mkfastq_output.txt for the terminal output.
