@@ -47,16 +47,6 @@ RUN cd /tmp/ && \
 	rm -f cellranger-2.1.0.tar.gz
 
 
-# Install s3fs fuse
-# RUN cd /tmp/ && \
-# yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
-
-# git clone https://github.com/s3fs-fuse/s3fs-fuse.git
-# cd s3fs-fuse
-# ./autogen.sh
-# ./configure
-# make
-# sudo make install
 
 # path
 ENV PATH /opt/cellranger-2.1.0:$PATH
