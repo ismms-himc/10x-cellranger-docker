@@ -24,11 +24,20 @@ RUN cd /tmp/ && \
 	yum -y --nogpgcheck localinstall bcl2fastq2-v2.19.1.403-Linux-x86_64.rpm && \
 	rm -rf bcl2fastq2-v2-19-1-linux.zip
 
-
-
 COPY cellranger-2.1.0.tar.gz /tmp
 COPY tiny-bcl /tiny-bcl/
-COPY refdata-cellranger/refdata-cellranger-GRCh38-1.2.0 refdata-cellranger-GRCh38-1.2.0/
+
+# Note: Reference transcriptome was scp transferred from minerva:
+# /hpc/packages/minerva-common/cellranger/2.1.0/refdata-cellranger-1.2.0/GRCh38
+# Reference transcriptome downloaded via wget command from 10x website did not
+# work: https://support.10xgenomics.com/genome-exome/software/downloads/latest
+
+COPY GRCh38 GRCh38/
+
+# Sanity check below (we have these files locally but re-download them while
+# building our image to be able to double check)
+RUN wget http://cf.10xgenomics.com/supp/genome/refdata-GRCh38-2.1.0.tar.gz
+RUN tar -xvzf refdata-GRCh38-2.1.0.tar.gz
 
 # Install cellranger
 RUN cd /tmp/ && \
@@ -39,8 +48,8 @@ RUN cd /tmp/ && \
 
 
 # Install s3fs fuse
-RUN cd /tmp/ && \
-	yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
+# RUN cd /tmp/ && \
+# yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
 
 # git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 # cd s3fs-fuse
@@ -54,4 +63,4 @@ ENV PATH /opt/cellranger-2.1.0:$PATH
 
 # Adding entrypoint, allows us to pass our AWS
 # batch job `mkfastq` instead of `cellranger mkfastq`
-ENTRYPOINT ["cellranger"]
+# ENTRYPOINT ["cellranger"]

@@ -13,6 +13,24 @@ bcl2fastq2 v2.19 (06/13/2017)
 
 cellranger v2.0.1 (07/18/2017)
 
+# Local Directory Structure
+- `cellranger-2.1.0.tar.gz`
+- `Dockerfile`
+- `GRCh38` (downloaded from Minerva via the following command: `scp -r davilm04@minerva.hpc.mssm.edu:/hpc/packages/minerva-common/cellranger/2.1.0/refdata-cellranger-1.2.0/GRCh38 .`)
+- `README.md`
+- `s3_large_file_upload.py`
+- `tiny-bcl` (downloaded from 10X website)
+
+# Steps After Running the Docker Container
+
+1. `mkdir fastqs`
+2. `cd fastqs`
+3. `cellranger mkfastq --id=test_sample --run=/tiny-bcl/cellranger-tiny-bcl-1.2.0/ --csv=/tiny-bcl/cellranger-tiny-bcl-samplesheet-1.2.0.csv --localmem=6`
+4. `cd ..`
+5. `mkdir cellranger_count_output`
+5. `cd cellranger_count_ouput`
+6. `cellranger count --id=test_sample --fastqs=/fastqs/test_sample/outs/fastq_path/p1/s1 --sample=test_sample --expect-cells=100 --transcriptome=/GRCh38 --chemistry=SC3Pv2 --localmem=6`
+
 # Command to Run
 
   ### `cellranger mkfastq`
