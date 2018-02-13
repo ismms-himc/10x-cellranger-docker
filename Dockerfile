@@ -43,3 +43,7 @@ ENV PATH /opt/cellranger-2.1.0:$PATH
 # # Adding entrypoint, allows us to pass our AWS
 # # batch job `mkfastq` instead of `cellranger mkfastq`
 # ENTRYPOINT ["cellranger"]
+
+RUN cellranger mkfastq --id=tiny-bcl-fastqs --run=/tiny-bcl/cellranger-tiny-bcl-1.2.0/ --csv=/tiny-bcl/cellranger-tiny-bcl-samplesheet-1.2.0.csv --localmem=6
+
+# CMD cellranger count --id=test_sample --fastqs=/tiny-bcl-fastqs/outs/fastq_path/p1/s1 --sample=test_sample --chemistry=SC3Pv2 --expect-cells=100 --transcriptome=/refdata-cellranger-GRCh38-1.2.0
