@@ -22,10 +22,10 @@
 
   Use the following command in the docker container
 
-    $ cellranger count --id=test_sample --fastqs=/tiny-bcl-fastqs/outs/fastq_path/p1/s1 --sample=test_sample --chemistry=SC3Pv2 --expect-cells=100  --localmem=6 --transcriptome=/refdata-cellranger-GRCh38-1.2.0
+    `$ cellranger count --id=test_sample --fastqs=/tiny-bcl-fastqs/outs/fastq_path/p1/s1 --sample=test_sample --chemistry=SC3Pv2 --expect-cells=100  --localmem=6 --transcriptome=/refdata-cellranger-GRCh38-1.2.0`
 
   On mac docker this is failing at STAR load SA.
 
   ### cellranger count testrun
 
-    $ cellranger testrun --id=tinytest --localcores=2 --localmem=4
+    `$ cellranger testrun --id=tinytest --localcores=2 --localmem=4`
